@@ -71,20 +71,25 @@ function HomePage() {
 
   return (
     <>
-      <select value={category} onChange={(e) => setCategory(e.target.value)}>
-        <option value={"japaneese"}>Japaneese</option>
-        <option value={"all"}>All</option>
-        <option value={"japaneesegirl"}>girl</option>
-      </select>
-
-      <input
-        onChange={(e) => setInputVal(e.target.value)}
-        value={inputVal}
-        type="text"
-        name="text"
-        class="input"
-        placeholder="Поиск"
-      />
+      <div className="papochka">
+        <input
+          onChange={(e) => setInputVal(e.target.value)}
+          value={inputVal}
+          type="text"
+          name="text"
+          class="input"
+          placeholder="Поиск"
+        />
+        <select
+          className="category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value={"japaneese"}>Japaneese cars</option>
+          <option value={"all"}>All</option>
+          <option value={"japaneesegirl"}>Japaneese Girls</option>
+        </select>
+      </div>
 
       <div className="wrapper">
         {products.map((item) => {
